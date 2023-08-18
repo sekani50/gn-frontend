@@ -5,9 +5,9 @@ import * as Yup from "yup";
 import InputField from "../inputfield/inputfield";
 import { FormikValue } from "../../types";
 import UploadingImage from "../inputfield/uploadingImage";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 function OnBoarding() {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   return (
     <Formik
       initialValues={{ email: "", image: null }}
@@ -17,11 +17,11 @@ function OnBoarding() {
       onSubmit={(values, actions) => {
         console.log(JSON.stringify(values, null, 2));
         //submit form and route with the user data
-        navigate("/invoice", {
-          state: {
-            data: JSON.stringify(values, null, 2),
-          },
-        });
+        //navigate("/invoice", {
+          //state: {
+            //data: JSON.stringify(values, null, 2),
+          //},
+       // });
         actions.resetForm();
       }}
     >
