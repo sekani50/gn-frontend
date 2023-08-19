@@ -26,12 +26,13 @@ export const UploadingImage = ({ field, form }: ImageUploadProps) => {
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.currentTarget.files?.[0];
-    form.setFieldValue(field.name, file);
+    
     if (file) {
       //create file reader instance
       const reader = new FileReader();
       reader.onload = (e: any) => {
         upload(e.target.result);
+        form.setFieldValue(field.name, e.target.result);
       };
       //convert file to base64
       reader.readAsDataURL(file);
