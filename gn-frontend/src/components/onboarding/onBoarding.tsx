@@ -15,7 +15,7 @@ function OnBoarding() {
         email: Yup.string().email("Invalid email").required("Email required"),
       })}
       onSubmit={(values, actions) => {
-        console.log(JSON.stringify(values, null, 2));
+        alert(JSON.stringify(values, null, 2));
         //submit form and route with the user data
         //navigate("/invoice", {
           //state: {
